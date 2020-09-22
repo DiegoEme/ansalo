@@ -9,6 +9,8 @@
   border: 5px solid black;
   width: 300px;
   margin: auto;
+  border-radius: 10px;
+  margin-top: 1.5em;
 }
 .pantallas {
   width: fit-content;
@@ -51,4 +53,17 @@
 
 .btn:hover {
   cursor: pointer;
+}
+
+.dark {
+  background-color: rgb(12, 44, 4);
+  color: antiquewhite;
+}
+
+.screen.dark {
+  background-color: black;
+}
+.btn.dark {
+  background-color: black;
+  color: thistle;
 }

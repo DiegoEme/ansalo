@@ -9,7 +9,6 @@ document.getElementById("n8").addEventListener("click", n8);
 document.getElementById("n9").addEventListener("click", n9);
 document.getElementById("n0").addEventListener("click", n0);
 document.getElementById("reset").addEventListener("click", reset);
-document.getElementById("teclado").addEventListener("click", terminado);
 
 function n1() {
   let resultado = document.getElementById("inputNumeros");
@@ -286,14 +285,52 @@ function reset() {
   resultadoLetras.textContent = "";
 }
 
-function terminado(e) {
-  e.target;
-  if (
-    resultado.textContent == "1234567890" &&
-    resultadoLetras.textContent == "ABCDEFGHI"
-  ) {
-    if (e.target.matches("btn")) {
-      alert("Pulsa RESET y vuelve a intentarlo");
-    }
+let darkmode = document.getElementById("darkmode");
+
+darkmode.addEventListener("click", () => {
+  document.querySelector(".ansalo").classList.add("dark");
+  document.querySelectorAll(".screen").forEach((el) => {
+    el.classList.add("dark");
+  });
+  document.querySelectorAll(".btn").forEach((el) => {
+    el.classList.add("dark");
+  });
+
+  localStorage.setItem("tema", "dark");
+});
+
+const temaEnStorage = () => {
+  const temaGuardado = localStorage.getItem("tema");
+  if (temaGuardado == "dark") {
+    document.querySelector(".ansalo").classList.add("dark");
+    document.querySelectorAll(".screen").forEach((el) => {
+      el.classList.add("dark");
+    });
+    document.querySelectorAll(".btn").forEach((el) => {
+      el.classList.add("dark");
+    });
+  } else if (temaGuardado == "retro") {
+    document.querySelector(".ansalo").classList.remove("dark");
+    document.querySelectorAll(".screen").forEach((el) => {
+      el.classList.remove("dark");
+    });
+    document.querySelectorAll(".btn").forEach((el) => {
+      el.classList.remove("dark");
+    });
   }
-}
+};
+
+temaEnStorage();
+
+let retromode = document.getElementById("retromode");
+
+retromode.addEventListener("click", () => {
+  document.querySelector(".ansalo").classList.remove("dark");
+  document.querySelectorAll(".screen").forEach((el) => {
+    el.classList.remove("dark");
+  });
+  document.querySelectorAll(".btn").forEach((el) => {
+    el.classList.remove("dark");
+  });
+  localStorage.setItem("tema", "retro");
+});
