@@ -1,0 +1,54 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.ansalo {
+  border: 5px solid black;
+  width: 300px;
+  margin: auto;
+}
+.pantallas {
+  width: fit-content;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 1em;
+}
+
+.screen {
+  width: 250px;
+  height: 50px;
+  background-color: rgb(226, 226, 226);
+  border: 2px solid black;
+  margin: 0.5em;
+}
+
+.temas {
+  padding-left: 1.5em;
+}
+
+.teclado {
+  width: 240px;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 1em auto;
+}
+
+.btn {
+  width: 50px;
+  height: 50px;
+  margin: 15px;
+  border-radius: 50%;
+  border: none;
+}
+
+.btn:focus {
+  outline: none;
+}
+
+.btn:hover {
+  cursor: pointer;
+}
