@@ -39,6 +39,8 @@ function n1() {
   if (resultado.textContent == "1234567890") {
     if (resultadoLetras.textContent == "A") {
       swal("La A ya está, sigue la B");
+    } else if (resultadoLetras.textContent !== "") {
+      swal("Siga la secuencia");
     } else {
       resultadoLetras.textContent += teclaLetra;
     }
@@ -46,6 +48,14 @@ function n1() {
     resultado.textContent += teclaValor;
   } else if (resultado.textContent == "1") {
     swal("el 1 ya está, sigue el 2");
+  } else if (resultado.textContent !== "1") {
+    swal(
+      `El siguiente número es ${
+        parseInt(
+          resultado.textContent.charAt(resultado.textContent.length - 1)
+        ) + 1
+      }`
+    );
   }
 }
 
@@ -93,7 +103,13 @@ function n3() {
   } else if (resultado.textContent == "") {
     swal("El primer número es el 1");
   } else if (resultado.textContent !== "12") {
-    swal("Siga la secuencia");
+    swal(
+      `El siguiente número es ${
+        parseInt(
+          resultado.textContent.charAt(resultado.textContent.length - 1)
+        ) + 1
+      }`
+    );
   } else if (resultado.textContent == "12") {
     resultado.textContent += teclaValor;
   } else {
@@ -121,7 +137,13 @@ function n4() {
   } else if (resultado.textContent == "") {
     swal("El primer número es el 1");
   } else if (resultado.textContent !== "123") {
-    swal("Siga la secuencia");
+    swal(
+      `El siguiente número es ${
+        parseInt(
+          resultado.textContent.charAt(resultado.textContent.length - 1)
+        ) + 1
+      }`
+    );
   } else if (resultado.textContent == "123") {
     resultado.textContent += teclaValor;
   } else {
@@ -149,7 +171,13 @@ function n5() {
   } else if (resultado.textContent == "") {
     swal("El primer número es el 1");
   } else if (resultado.textContent !== "1234") {
-    swal("Siga la secuencia");
+    swal(
+      `El siguiente número es ${
+        parseInt(
+          resultado.textContent.charAt(resultado.textContent.length - 1)
+        ) + 1
+      }`
+    );
   } else if (resultado.textContent == "1234") {
     resultado.textContent += teclaValor;
   } else {
@@ -177,7 +205,13 @@ function n6() {
   } else if (resultado.textContent == "") {
     swal("El primer número es el 1");
   } else if (resultado.textContent !== "12345") {
-    swal("Siga la secuencia");
+    swal(
+      `El siguiente número es ${
+        parseInt(
+          resultado.textContent.charAt(resultado.textContent.length - 1)
+        ) + 1
+      }`
+    );
   } else if (resultado.textContent == "12345") {
     resultado.textContent += teclaValor;
   } else {
@@ -205,7 +239,13 @@ function n7() {
   } else if (resultado.textContent == "") {
     swal("El primer número es el 1");
   } else if (resultado.textContent !== "123456") {
-    swal("Siga la secuencia");
+    swal(
+      `El siguiente número es ${
+        parseInt(
+          resultado.textContent.charAt(resultado.textContent.length - 1)
+        ) + 1
+      }`
+    );
   } else if (resultado.textContent == "123456") {
     resultado.textContent += teclaValor;
   } else {
@@ -233,7 +273,13 @@ function n8() {
   } else if (resultado.textContent == "") {
     swal("El primer número es el 1");
   } else if (resultado.textContent !== "1234567") {
-    swal("Siga la secuencia");
+    swal(
+      `El siguiente número es ${
+        parseInt(
+          resultado.textContent.charAt(resultado.textContent.length - 1)
+        ) + 1
+      }`
+    );
   } else if (resultado.textContent == "1234567") {
     resultado.textContent += teclaValor;
   } else {
@@ -261,7 +307,7 @@ function n9() {
   } else if (resultado.textContent == "") {
     swal("El primer número es el 1");
   } else if (resultado.textContent !== "12345678") {
-    swal("Siga la secuencia");
+    swal(`El siguiente número es 0`);
   } else if (resultado.textContent == "12345678") {
     resultado.textContent += teclaValor;
   } else {
@@ -289,7 +335,13 @@ function n0() {
   } else if (resultado.textContent == "") {
     swal("El primer número es el 1");
   } else if (resultado.textContent !== "123456789") {
-    swal("Siga la secuencia");
+    swal(
+      `El siguiente número es ${
+        parseInt(
+          resultado.textContent.charAt(resultado.textContent.length - 1)
+        ) + 1
+      }`
+    );
   } else if (resultado.textContent == "123456789") {
     resultado.textContent += teclaValor;
   } else {
@@ -315,12 +367,28 @@ darkmode.addEventListener("click", () => {
     el.classList.add("dark");
   });
 
+  document.querySelector(".ansalo").classList.remove("retro");
+  document.querySelectorAll(".screen").forEach((el) => {
+    el.classList.remove("retro");
+  });
+  document.querySelectorAll(".btn").forEach((el) => {
+    el.classList.remove("retro");
+  });
+
   localStorage.setItem("tema", "dark");
 });
 
 const temaEnStorage = () => {
   const temaGuardado = localStorage.getItem("tema");
   if (temaGuardado == "dark") {
+    document.querySelector(".ansalo").classList.remove("retro");
+    document.querySelectorAll(".screen").forEach((el) => {
+      el.classList.remove("retro");
+    });
+    document.querySelectorAll(".btn").forEach((el) => {
+      el.classList.remove("retro");
+    });
+
     document.querySelector(".ansalo").classList.add("dark");
     document.querySelectorAll(".screen").forEach((el) => {
       el.classList.add("dark");
@@ -335,6 +403,14 @@ const temaEnStorage = () => {
     });
     document.querySelectorAll(".btn").forEach((el) => {
       el.classList.remove("dark");
+    });
+
+    document.querySelector(".ansalo").classList.add("retro");
+    document.querySelectorAll(".screen").forEach((el) => {
+      el.classList.add("retro");
+    });
+    document.querySelectorAll(".btn").forEach((el) => {
+      el.classList.add("retro");
     });
   }
 };
@@ -351,5 +427,14 @@ retromode.addEventListener("click", () => {
   document.querySelectorAll(".btn").forEach((el) => {
     el.classList.remove("dark");
   });
+
+  document.querySelector(".ansalo").classList.add("retro");
+  document.querySelectorAll(".screen").forEach((el) => {
+    el.classList.add("retro");
+  });
+  document.querySelectorAll(".btn").forEach((el) => {
+    el.classList.add("retro");
+  });
+
   localStorage.setItem("tema", "retro");
 });
