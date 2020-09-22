@@ -9,6 +9,25 @@ document.getElementById("n8").addEventListener("click", n8);
 document.getElementById("n9").addEventListener("click", n9);
 document.getElementById("n0").addEventListener("click", n0);
 document.getElementById("reset").addEventListener("click", reset);
+const teclado = document.querySelector("#teclado");
+
+teclado.addEventListener("click", (e) => {
+  const cualTecla = e.target;
+
+  let resultado = document.getElementById("inputNumeros");
+  let resultadoLetras = document.getElementById("inputLetras");
+
+  if (!cualTecla.matches("button")) {
+    return;
+  }
+  if (
+    cualTecla.classList.contains("btn") &&
+    resultado.textContent === "1234567890" &&
+    resultadoLetras.textContent === "ABCDEFGHIJ"
+  ) {
+    swal("Terminaste, pulsa RESET");
+  }
+});
 
 function n1() {
   let resultado = document.getElementById("inputNumeros");
@@ -19,14 +38,14 @@ function n1() {
 
   if (resultado.textContent == "1234567890") {
     if (resultadoLetras.textContent == "A") {
-      alert("La A ya está, sigue la B");
+      swal("La A ya está, sigue la B");
     } else {
       resultadoLetras.textContent += teclaLetra;
     }
   } else if (resultado.textContent == "") {
     resultado.textContent += teclaValor;
   } else if (resultado.textContent == "1") {
-    alert("el 1 ya está, sigue el 2");
+    swal("el 1 ya está, sigue el 2");
   }
 }
 
@@ -41,16 +60,16 @@ function n2() {
     if (resultadoLetras.textContent == "A") {
       resultadoLetras.textContent += teclaLetra;
     } else if (resultadoLetras.textContent == "") {
-      alert("La primera letra es la A");
+      swal("La primera letra es la A");
     } else {
-      alert("la B ya está sigue la C");
+      swal("la B ya está sigue la C");
     }
   } else if (resultado.textContent == "") {
-    alert("El primer número es el 1");
+    swal("El primer número es el 1");
   } else if (resultado.textContent == "1") {
     resultado.textContent += teclaValor;
   } else {
-    alert("el 2 ya está, sigue el 3");
+    swal("el 2 ya está, sigue el 3");
   }
 }
 
@@ -65,20 +84,20 @@ function n3() {
     if (resultadoLetras.textContent == "AB") {
       resultadoLetras.textContent += teclaLetra;
     } else if (resultadoLetras.textContent == "") {
-      alert("La primera letra es la A");
+      swal("La primera letra es la A");
     } else if (resultadoLetras.textContent !== "AB") {
-      alert("Siga la secuencia");
+      swal("Siga la secuencia");
     } else {
-      alert("la B ya está sigue la C");
+      swal("la B ya está sigue la C");
     }
   } else if (resultado.textContent == "") {
-    alert("El primer número es el 1");
+    swal("El primer número es el 1");
   } else if (resultado.textContent !== "12") {
-    alert("Siga la secuencia");
+    swal("Siga la secuencia");
   } else if (resultado.textContent == "12") {
     resultado.textContent += teclaValor;
   } else {
-    alert("el 3 ya está, sigue el 4");
+    swal("el 3 ya está, sigue el 4");
   }
 }
 
@@ -93,20 +112,20 @@ function n4() {
     if (resultadoLetras.textContent == "ABC") {
       resultadoLetras.textContent += teclaLetra;
     } else if (resultadoLetras.textContent == "") {
-      alert("La primera letra es la A");
+      swal("La primera letra es la A");
     } else if (resultadoLetras.textContent !== "ABC") {
-      alert("Siga la secuencia");
+      swal("Siga la secuencia");
     } else {
-      alert("la C ya está sigue la D");
+      swal("la C ya está sigue la D");
     }
   } else if (resultado.textContent == "") {
-    alert("El primer número es el 1");
+    swal("El primer número es el 1");
   } else if (resultado.textContent !== "123") {
-    alert("Siga la secuencia");
+    swal("Siga la secuencia");
   } else if (resultado.textContent == "123") {
     resultado.textContent += teclaValor;
   } else {
-    alert("el 4 ya está, sigue el 5");
+    swal("el 4 ya está, sigue el 5");
   }
 }
 
@@ -121,20 +140,20 @@ function n5() {
     if (resultadoLetras.textContent == "ABCD") {
       resultadoLetras.textContent += teclaLetra;
     } else if (resultadoLetras.textContent == "") {
-      alert("La primera letra es la A");
+      swal("La primera letra es la A");
     } else if (resultadoLetras.textContent !== "ABCD") {
-      alert("Siga la secuencia");
+      swal("Siga la secuencia");
     } else {
-      alert("la E ya está sigue la F");
+      swal("la E ya está sigue la F");
     }
   } else if (resultado.textContent == "") {
-    alert("El primer número es el 1");
+    swal("El primer número es el 1");
   } else if (resultado.textContent !== "1234") {
-    alert("Siga la secuencia");
+    swal("Siga la secuencia");
   } else if (resultado.textContent == "1234") {
     resultado.textContent += teclaValor;
   } else {
-    alert("el 5 ya está, sigue el 6");
+    swal("el 5 ya está, sigue el 6");
   }
 }
 
@@ -149,20 +168,20 @@ function n6() {
     if (resultadoLetras.textContent == "ABCDE") {
       resultadoLetras.textContent += teclaLetra;
     } else if (resultadoLetras.textContent == "") {
-      alert("La primera letra es la A");
+      swal("La primera letra es la A");
     } else if (resultadoLetras.textContent !== "ABCDE") {
-      alert("Siga la secuencia");
+      swal("Siga la secuencia");
     } else {
-      alert("la F ya está sigue la G");
+      swal("la F ya está sigue la G");
     }
   } else if (resultado.textContent == "") {
-    alert("El primer número es el 1");
+    swal("El primer número es el 1");
   } else if (resultado.textContent !== "12345") {
-    alert("Siga la secuencia");
+    swal("Siga la secuencia");
   } else if (resultado.textContent == "12345") {
     resultado.textContent += teclaValor;
   } else {
-    alert("el 6 ya está, sigue el 7");
+    swal("el 6 ya está, sigue el 7");
   }
 }
 
@@ -177,20 +196,20 @@ function n7() {
     if (resultadoLetras.textContent == "ABCDEF") {
       resultadoLetras.textContent += teclaLetra;
     } else if (resultadoLetras.textContent == "") {
-      alert("La primera letra es la A");
+      swal("La primera letra es la A");
     } else if (resultadoLetras.textContent !== "ABCDEF") {
-      alert("Siga la secuencia");
+      swal("Siga la secuencia");
     } else {
-      alert("la G ya está sigue la H");
+      swal("la G ya está sigue la H");
     }
   } else if (resultado.textContent == "") {
-    alert("El primer número es el 1");
+    swal("El primer número es el 1");
   } else if (resultado.textContent !== "123456") {
-    alert("Siga la secuencia");
+    swal("Siga la secuencia");
   } else if (resultado.textContent == "123456") {
     resultado.textContent += teclaValor;
   } else {
-    alert("el 7 ya está, sigue el 8");
+    swal("el 7 ya está, sigue el 8");
   }
 }
 
@@ -205,20 +224,20 @@ function n8() {
     if (resultadoLetras.textContent == "ABCDEFG") {
       resultadoLetras.textContent += teclaLetra;
     } else if (resultadoLetras.textContent == "") {
-      alert("La primera letra es la A");
+      swal("La primera letra es la A");
     } else if (resultadoLetras.textContent !== "ABCDEFG") {
-      alert("Siga la secuencia");
+      swal("Siga la secuencia");
     } else {
-      alert("la H ya está sigue la I");
+      swal("la H ya está sigue la I");
     }
   } else if (resultado.textContent == "") {
-    alert("El primer número es el 1");
+    swal("El primer número es el 1");
   } else if (resultado.textContent !== "1234567") {
-    alert("Siga la secuencia");
+    swal("Siga la secuencia");
   } else if (resultado.textContent == "1234567") {
     resultado.textContent += teclaValor;
   } else {
-    alert("el 8 ya está, sigue el 9");
+    swal("el 8 ya está, sigue el 9");
   }
 }
 
@@ -233,20 +252,20 @@ function n9() {
     if (resultadoLetras.textContent == "ABCDEFGH") {
       resultadoLetras.textContent += teclaLetra;
     } else if (resultadoLetras.textContent == "") {
-      alert("La primera letra es la A");
+      swal("La primera letra es la A");
     } else if (resultadoLetras.textContent !== "ABCDEFGH") {
-      alert("Siga la secuencia");
+      swal("Siga la secuencia");
     } else {
-      alert("la I ya está sigue la J");
+      swal("la I ya está sigue la J");
     }
   } else if (resultado.textContent == "") {
-    alert("El primer número es el 1");
+    swal("El primer número es el 1");
   } else if (resultado.textContent !== "12345678") {
-    alert("Siga la secuencia");
+    swal("Siga la secuencia");
   } else if (resultado.textContent == "12345678") {
     resultado.textContent += teclaValor;
   } else {
-    alert("el 9 ya está, sigue el 0");
+    swal("el 9 ya está, sigue el 0");
   }
 }
 
@@ -261,20 +280,20 @@ function n0() {
     if (resultadoLetras.textContent == "ABCDEFGHI") {
       resultadoLetras.textContent += teclaLetra;
     } else if (resultadoLetras.textContent == "") {
-      alert("La primera letra es la A");
+      swal("La primera letra es la A");
     } else if (resultadoLetras.textContent !== "ABCDEFGHI") {
-      alert("Siga la secuencia");
+      swal("Siga la secuencia");
     } else {
-      alert("la J ya está.");
+      swal("la J ya está.");
     }
   } else if (resultado.textContent == "") {
-    alert("El primer número es el 1");
+    swal("El primer número es el 1");
   } else if (resultado.textContent !== "123456789") {
-    alert("Siga la secuencia");
+    swal("Siga la secuencia");
   } else if (resultado.textContent == "123456789") {
     resultado.textContent += teclaValor;
   } else {
-    alert("el 0 ya está");
+    swal("el 0 ya está");
   }
 }
 
